@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import AR from "./ar.js";
-import { WEBSITE, PHONE, PHONE_TEL, WA, HERO, CATS, AREAS, PKG_IMG, SEASONS, TIPS, CHIPS, NIGHTS } from "./data.js";
+import { WEBSITE, PHONE, PHONE_TEL, WA, HERO, CATS, AREAS, PKG_IMG, SEASONS, TIPS, CHIPS, NIGHTS, COMPANY, LICENSE } from "./data.js";
 import "./styles.css";
 
 const Ctx = createContext((s) => s);
@@ -24,7 +24,7 @@ function Nav({ lang, setLang }) {
   return (
     <header className={"nav" + (solid || open ? " solid" : "")}>
       <div className="wrap">
-        <a className="logo" href="#top">SFM <span>Travels</span></a>
+        <a className="logo" href="#top"><img src="/images/logo.jpg" alt="" />SFM <span>Travels</span></a>
         <nav className={"links" + (open ? " open" : "")} aria-label="Main">
           {links.map(([id, l]) => <a key={id} href={"#" + id} onClick={() => setOpen(false)}>{t(l)}</a>)}
         </nav>
@@ -202,14 +202,17 @@ function Footer() {
   return (
     <footer><div className="wrap">
       <div className="cols">
-        <div><h4>SFM Travels</h4>{t("Holiday packages and tours for Dubai and the UAE.")}</div>
+        <div><img className="flogo" src="/images/logo.jpg" alt="SFM Travels" /><h4>SFM Travels</h4>{t("Holiday packages and tours for Dubai and the UAE.")}</div>
         <div><h4>{t("Explore")}</h4><a href="#things">{t("Things to do")}</a><a href="#packages">{t("Packages")}</a><a href="#areas">{t("Where to go")}</a></div>
         <div><h4>{t("Services")}</h4><a href="#plan">{t("Hotels")}</a><a href="#plan">{t("Tours")}</a></div>
         <div><h4>{t("Contact")}</h4><a href={PHONE_TEL} dir="ltr" style={{ unicodeBidi: "isolate" }}>{PHONE}</a>
           <a href={WA} target="_blank" rel="noreferrer">{t("WhatsApp")}</a>
           <a href={WEBSITE} target="_blank" rel="noreferrer">www.sfmtravels.co.in</a></div>
       </div>
-      <div className="copy">{t("© 2026 SFM Travels. All rights reserved.")}</div>
+      <div className="copy">
+        <div>{t("© 2026 SFM Travels. All rights reserved.")}</div>
+        <div>{t(COMPANY)}{LICENSE && <> · {t("Trade licence no.")}: <span dir="ltr">{LICENSE}</span></>}</div>
+      </div>
     </div></footer>
   );
 }

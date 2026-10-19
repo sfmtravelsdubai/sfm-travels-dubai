@@ -8,14 +8,15 @@ export const WA = "https://wa.me/971526973378";
 const BA = "/images/burj-al-arab.jpg", AT = "/images/atlantis.jpg", BK = "/images/burj-khalifa.jpg";
 export const HERO = [[BA, "center"], [AT, "center 45%"], [BK, "center 35%"]];
 // [label, photo, position, package filter]
-export const CATS = [["Skyline", BK, "center 35%", "City"], ["Beaches", BA, "center", "Honeymoon"], ["Resorts", AT, "center 40%", "Luxury"]];
+export const CATS = [["Skyline", BK, "center 35%", "City"], ["Beaches", BA, "15% center", "Honeymoon"], ["Resorts", AT, "center 40%", "Luxury"]];
 export const AREAS = [
   ["Downtown Dubai", "Burj Khalifa, Dubai Fountain, Dubai Mall.", BK, "center 35%"],
   ["Palm Jumeirah", "Beach resorts and Atlantis.", AT, "center 40%"],
   ["Jumeirah", "Burj Al Arab, Jumeirah Beach, Madinat Jumeirah.", BA, "center"],
 ];
-// Packages without a photo here show a plain colour block. Add a file and an entry to fill it.
-export const PKG_IMG = { classic: [BK, "center 35%"], family: [AT, "center 85%"], honeymoon: [BA, "left center"], luxury: [AT, "center 30%"] };
+// Packages without a photo show a plain colour block. Put the file in public/images and add an entry here.
+export const PKG_IMG = { classic: [BK, "center 35%"], family: [AT, "center 85%"], honeymoon: [BA, "left center"], luxury: [AT, "center 30%"],
+  desert: ["/images/desert-safari.jpg", "center"], abudhabi: ["/images/abu-dhabi.jpg", "center"] };
 export const SEASONS = [
   ["Winter (Dec to Feb)", "Warm days around 25°C. Ideal for beaches, safaris and outdoor events."],
   ["Spring (Mar to May)", "Getting hotter. Good for city tours and lower hotel rates."],
@@ -30,3 +31,7 @@ export const TIPS = [
 ];
 export const CHIPS = ["All", "City", "Desert", "Family", "Honeymoon", "Luxury"];
 export const NIGHTS = { "Any nights": [0, 99], "3-4 nights": [3, 4], "5-6 nights": [5, 6], "7+ nights": [7, 99] };
+
+// ---- Company ----
+export const COMPANY = "SFM Tour and Travels FZ-LLC";
+export const LICENSE = ""; // type your licence number between the quotes
